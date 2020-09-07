@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Request, Response } from 'express';
-import { getRepository, Repository } from 'typeorm';
+import { getRepository } from 'typeorm';
 
 import Hashtag from '../models/Hashtag';
 
@@ -30,7 +30,7 @@ interface IResponse {
   hashtag_id: string; //eslint-disable-line
 }
 
-class HashtagController {
+class InstagramHashtagController {
   public async index(request: Request, response: Response): Promise<any> {
     const ormRepository = getRepository(Hashtag);
 
@@ -83,4 +83,4 @@ class HashtagController {
   }
 }
 
-export default new HashtagController();
+export default new InstagramHashtagController();
