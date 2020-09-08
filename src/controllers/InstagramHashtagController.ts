@@ -34,7 +34,7 @@ class InstagramHashtagController {
   public async index(request: Request, response: Response): Promise<any> {
     const ormRepository = getRepository(Hashtag);
 
-    const hashtag = 'casamento';
+    const hashtag = 'casamentobelinhaeleo';
 
     const { data } = await axios.get<IInstagramResponse>(
       `https://www.instagram.com/explore/tags/${hashtag}/?__a=1`,
