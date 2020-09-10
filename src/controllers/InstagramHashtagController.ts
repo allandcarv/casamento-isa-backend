@@ -31,7 +31,10 @@ interface IResponse {
 }
 
 class InstagramHashtagController {
-  public async index(request: Request, response: Response): Promise<any> {
+  public async index(
+    request: Request | null,
+    response: Response | null,
+  ): Promise<any> {
     const ormRepository = getRepository(Hashtag);
 
     const hashtag = 'casamentobelinhaeleo';
@@ -79,7 +82,7 @@ class InstagramHashtagController {
       Promise.resolve([]),
     );
 
-    return response.json(returnJson);
+    return response?.json(returnJson);
   }
 }
 
