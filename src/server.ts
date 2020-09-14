@@ -5,7 +5,7 @@ import cors from 'cors';
 
 import routes from './routes';
 import './configs/database';
-import job from './providers/cron';
+import './providers/cron';
 
 const app = express();
 
@@ -16,5 +16,3 @@ app.use(express.json());
 app.use(routes);
 
 app.listen(3333);
-
-job.start();
