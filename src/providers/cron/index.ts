@@ -1,9 +1,9 @@
 import cron from 'node-cron';
 
-import InstagramHashtagController from '../../controllers/InstagramHashtagController';
+import InstagramMediaController from '../../controllers/InstagramMediaController';
 
 cron.schedule('*/10 * * * *', () => {
-  InstagramHashtagController.index(null, null);
+  InstagramMediaController.index(null, null);
 
-  console.log('Hashtags loaded');
+  console.log('Media loaded');
 });

@@ -7,19 +7,19 @@ import {
   ObjectIdColumn,
 } from 'typeorm';
 
-@Entity('hashtags')
-class Hashtag {
+@Entity('medias')
+class Media {
   @ObjectIdColumn()
   id: ObjectID;
 
   @Column()
-  photo: string;
+  media_id: String; //eslint-disable-line
 
   @Column()
-  hashtag_id: string; //eslint-disable-line
+  media_url: string; //eslint-disable-line
 
   @Column()
-  user: string;
+  permalink: string; //eslint-disable-line
 
   @CreateDateColumn()
   created_at: Date; //eslint-disable-line
@@ -28,4 +28,4 @@ class Hashtag {
   updated_at: Date; //eslint-disable-line
 }
 
-export default Hashtag;
+export default Media;

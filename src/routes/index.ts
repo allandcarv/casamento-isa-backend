@@ -1,11 +1,11 @@
 import { Router } from 'express';
 
-import HashtagController from '../controllers/HashtagController';
-import InstagramHashtagController from '../controllers/InstagramHashtagController';
+import MediaController from '../controllers/MediaController';
+import InstagramMediaController from '../controllers/InstagramMediaController';
 
 const routes = Router();
 
-routes.use('/hashtags', HashtagController.index);
-routes.use('/instagramhashtag', InstagramHashtagController.index);
+routes.use('/photos', MediaController.index);
+routes.use('/media', InstagramMediaController.index);
 
 export default routes;
