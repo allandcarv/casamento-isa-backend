@@ -33,6 +33,7 @@
     "mongodb": "^3.6.1",
     "node-cron": "^2.0.3",
     "reflect-metadata": "^0.1.13",
+    "ts-node": "^9.0.0",
     "typeorm": "^0.2.25"
   }
 }
