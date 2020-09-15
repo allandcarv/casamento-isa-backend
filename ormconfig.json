@@ -5,5 +5,5 @@
   "useUnifiedTopology": true,
   "useNewUrlParser": true,
   "synchronize": true,
-  "entities": [ "src/models/*.*" ]
+  "entities": [ "**/models/*.*" ]
 }
