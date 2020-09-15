@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Request, Response } from 'express';
-import { createConnection, getRepository } from 'typeorm';
+import { getRepository } from 'typeorm';
 
 import Media from '../models/Media';
 
@@ -13,8 +13,6 @@ class InstagramMediaController {
     request: Request | null,
     response: Response | null,
   ): Promise<any> {
-    await createConnection();
-
     const ormRepository = getRepository(Media);
 
     const token =
