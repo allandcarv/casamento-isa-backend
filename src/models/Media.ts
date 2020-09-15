@@ -7,7 +7,7 @@ import {
   ObjectIdColumn,
 } from 'typeorm';
 
-@Entity('Media')
+@Entity()
 class Media {
   @ObjectIdColumn()
   id: ObjectID;

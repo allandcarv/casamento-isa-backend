@@ -12,9 +12,9 @@ class MediaController {
   async index(request: Request, response: Response<IMedia[]>): Promise<any> {
     const mediaRepository = getRepository(Media);
 
-    const hashtags = await mediaRepository.find();
+    const photos = await mediaRepository.find();
 
-    const result = hashtags.map<IMedia>(media => {
+    const result = photos.map<IMedia>(media => {
       return {
         media_url: media.media_url,
         permalink: media.permalink,
