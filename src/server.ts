@@ -4,7 +4,6 @@ import express from 'express';
 import cors from 'cors';
 
 import routes from './routes';
-import './configs/database';
 import './providers/cron';
 
 const port = process.env.PORT || 3333;
