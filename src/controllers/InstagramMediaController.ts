@@ -22,25 +22,39 @@ class InstagramMediaController {
       `https://graph.instagram.com/me/media?access_token=${token}`,
     );
 
-    data.data.forEach(async (id: IId) => {
+    data.data.forEach(async (media: IId) => {
       const registeredId = await ormRepository.findOne({
         where: {
-          media_id: id.id,
+          media_id: media.id,
         },
       });
 
       if (!registeredId) {
         const mediaData = await axios.get(
-          `https://graph.instagram.com/${id.id}?fields=media_url,permalink&access_token=${token}`,
+          `https://graph.instagram.com/${media.id}?fields=media_url,permalink&access_token=${token}`,
         );
 
         const newMedia = ormRepository.create({
-          media_id: id.id,
+          media_id: media.id,
           media_url: mediaData.data.media_url,
           permalink: mediaData.data.permalink,
         });
 
         await ormRepository.save(newMedia);
+      }
+    });
+
+    const registeredMedia = await ormRepository.find();
+
+    registeredMedia.forEach(async media => {
+      const hasPhoto = data.data.some((m: IId) => m.id === media.media_id);
+
+      if (!hasPhoto) {
+        const mediaToRemove = await ormRepository.find({
+          where: { media_id: media.media_id },
+        });
+
+        await ormRepository.remove(mediaToRemove);
       }
     });
 
