@@ -2,8 +2,8 @@ import cron from 'node-cron';
 
 import InstagramMediaController from '../../controllers/InstagramMediaController';
 
-cron.schedule('*/1 * * * *', () => {
+cron.schedule('*/10 * * * *', () => {
   InstagramMediaController.index(null, null);
 
-  console.log('Media loaded');
+  console.log('Loading Instagram Photos...');
 });
