@@ -1,9 +1,0 @@
-{
-  "name": "default",
-  "type": "mongodb",
-  "url": "mongodb+srv://casamento_db:HLfYuf1fivYd7MS4@cluster0.7s65w.mongodb.net/isaeleo?retryWrites=true&w=majority",
-  "useUnifiedTopology": true,
-  "useNewUrlParser": true,
-  "synchronize": true,
-  "entities": [ "**/models/*.ts" ]
-}
