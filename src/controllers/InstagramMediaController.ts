@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
+import { parseISO, addWeeks, isAfter } from 'date-fns';
 
 import Media from '../models/Media';
 
@@ -47,13 +48,19 @@ class InstagramMediaController {
     const registeredMedia = await ormRepository.find();
 
     registeredMedia.forEach(async media => {
+      let mediaToRemove: Media[] = [];
       const hasPhoto = data.data.some((m: IId) => m.id === media.media_id);
 
-      if (!hasPhoto) {
-        const mediaToRemove = await ormRepository.find({
+      const moreThan2Weeks = addWeeks(parseISO(String(media.created_at)), 2);
+      const expiredDate = isAfter(new Date(), moreThan2Weeks);
+
+      if (!hasPhoto || expiredDate) {
+        mediaToRemove = await ormRepository.find({
           where: { media_id: media.media_id },
         });
+      }
 
+      if (mediaToRemove) {
         await ormRepository.remove(mediaToRemove);
       }
     });
