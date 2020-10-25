@@ -26,7 +26,7 @@ class ConfirmationController {
     }
 
     try {
-      await sendmail(request.body.email);
+      await sendmail(request.body.name, request.body.email);
     } catch (e) {
       console.error(e);
     }
