@@ -17,7 +17,7 @@ class InstagramMediaController {
     const ormRepository = getRepository(Media);
 
     const token =
-      'IGQVJWZAHBudXlPdV9pNTBuUG40SmlyVk5XWmJwWDRBZAHZAndU1EaVEwOERDMlFLNVFXaExZARnFyREV5bzJWcDdYbjVRSTI0djU4QWZA4OTB4QmhNTGVRYzZA6QTB6Q2ZAFcHNEdXNDQm1CR191RW1TOGVlSwZDZD';
+      'IGQVJYRTE2NW9WQ1ZABbHBQWjBHWlpSZADJpOGNScEVrXzk0aVZADTjVJQUFTVVo5aUxXWnRRQzZAidG5oNEJNZA1ZAaM0N4VjM1SVY3SnpXYVkxYzdESlZAFN2J2TGpFbnlFdUphTDJwN1BVXy1FNDVKSW1scAZDZD';
 
     const { data } = await axios.get(
       `https://graph.instagram.com/me/media?access_token=${token}`,
