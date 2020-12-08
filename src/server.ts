@@ -2,12 +2,12 @@ import 'reflect-metadata';
 import { createConnection } from 'typeorm';
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 
 import routes from './routes';
 import './providers/cron';
 
-dotenv.config();
+// dotenv.config();
 
 createConnection({
   name: 'default',
