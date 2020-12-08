@@ -12,7 +12,8 @@ import './providers/cron';
 createConnection({
   name: 'default',
   type: 'mongodb',
-  url: process.env.MONGODB_URL,
+  url:
+    'mongodb://MongoDBAdmin:SK6XwKT3LeqEYAcX@ec2-18-222-216-148.us-east-2.compute.amazonaws.com:27017/?authSource=admin&readPreference=primary&ssl=false',
   useUnifiedTopology: true,
   useNewUrlParser: true,
   synchronize: true,
