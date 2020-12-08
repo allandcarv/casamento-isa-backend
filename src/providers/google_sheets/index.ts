@@ -1,7 +1,7 @@
 import { GoogleSpreadsheet, GoogleSpreadsheetRow } from 'google-spreadsheet';
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 
-dotenv.config();
+// dotenv.config();
 
 interface IData {
   name: string;
